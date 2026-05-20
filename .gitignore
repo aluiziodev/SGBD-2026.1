@@ -3,10 +3,11 @@ output/*
 src/output/*
 
 *.vscode/
-output/
+*output/
 buckets/
 diretorio.txt
 in.txt
 out.txt
 hashclaude
+
 
