@@ -3,6 +3,12 @@
 #include "ordenacao.hpp"
 #include "../models/tabela.hpp"
 
+
+
+
+
+
+
 Tabela mergeJoin(Tabela &R, Tabela &S, const string &atr_r, const string &atr_s){
     //Usando o esquema da tabela, obtemos os indices
     int col_r = R.esquema.indice(atr_r);
@@ -73,14 +79,5 @@ Tabela mergeJoin(Tabela &R, Tabela &S, const string &atr_r, const string &atr_s)
     return resultado;
 }
 
-Tabela sortMergeJoin(Tabela &R, Tabela &S, const string &atr_r, const string &atr_s) {
-
-    //Ordena as tabelas pra poder usar o merge join
-    Tabela R_ord = ordernar(R, atr_r);
-    Tabela S_ord = ordernar(S, atr_s);
-
-    // Merge Join nas tabelas já ordenadas
-    return mergeJoin(R_ord, S_ord, atr_r, atr_s);
-}
 
 #endif

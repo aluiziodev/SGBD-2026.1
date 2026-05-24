@@ -4,9 +4,8 @@
     #include <windows.h>   // só no Windows
 #endif
 
-#include "external_sort/merge_join.hpp"
-#include "models/leitura.hpp"
-#include "external_sort/ordenacao.hpp"
+#include "utils/leitura.hpp"
+#include "sort_merge_join/sort_merge_join.hpp"
 
 #define RED "\033[31m"
 #define GREEN "\033[32m"

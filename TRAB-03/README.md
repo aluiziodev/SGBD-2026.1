@@ -32,14 +32,17 @@ trabalho03/
 │    │   ├── esquema.hpp           # Mapeamento nome de coluna → índice
 │    │   ├── pagina.hpp            # Structs Tupla e Pagina (máx. 12 tuplas)
 │    │   ├── tabela.hpp            # Struct Tabela (lista de páginas + esquema)
-│    │   ├── leitura.hpp           # Leitura de CSV 
 │    │   └── disco.hpp             # Simulação de disco (vetor de tabelas)
-│    └── sorting/
+│    ├── utils/
+│    │   └── leitura.hpp           # Leitura de CSV
+│    └── sort_merge_join/
 │        ├── runs.hpp              # geração de runs ordenadas
 │        ├── intercalacao.hpp      # intercalação externa
 │        ├── ordenacao.hpp         # Orquestra gerarRuns + intercala
-│        └── merge_join.hpp        # Merge Join e Sort-Merge Join
+│        ├── merge_join.hpp        # Merge Join
+│        └── sort_merge_join.hpp   # Sort Merge join
 ├── main.exe                       # Executavel do programa no windows
+├── main                           # Executavel do programa no unix
 └── README.md 
 ```
 
