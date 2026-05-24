@@ -82,6 +82,7 @@ Junção: `Wines.chave_estrangeira = Grapes.chave_primaria`
 | Teste 2 | Merge Join simples sem duplicatas | 4 tuplas |
 | Teste 3 | Merge Join sem nenhuma correspondência | 0 tuplas |
 | Teste 4 | Leitura dos CSVs reais e SMJ completo | 510 tuplas |
+| Teste 5 | Ordenação da tabela de Resultado pelo atributo "vinho" | 510 tuplas ordenadas  |
 
 ---
 
