@@ -4,7 +4,7 @@
 #include "runs.hpp"
 
 #define MAX_BUFFERS_ENTRADA 4
-#define MAX_BUFFERS_SAIDA 4
+#define MAX_BUFFERS_SAIDA 1
 
 
 vector<Tabela> intercala(vector<Tabela> &runs_entrada,   
@@ -17,6 +17,8 @@ vector<Tabela> intercala(vector<Tabela> &runs_entrada,
         vector<int> indices(fim - i, 0); // Índices de leitura para cada run de entrada
 
         Tabela run_saida; // Frame de saída 
+        run_saida.esquema = esquema;
+
         Pagina pagina_saida; // Página atual do frame de saída            
 
         while (true){
@@ -25,8 +27,9 @@ vector<Tabela> intercala(vector<Tabela> &runs_entrada,
 
             
             for (int j = i; j < fim; j++){     // Encontrar a menor tupla entre as runs de entrada
-                if (indices[j - i] < runs_entrada[j].qtdTotalTuplas()){
-                    Tupla tupla_atual = runs_entrada[j].tuplaEm(indices[j - i], col_idx);
+                int local = j - i;
+                if (indices[local] < runs_entrada[j].qtdTotalTuplas()){
+                    Tupla tupla_atual = runs_entrada[j].tuplaEm(indices[local]);
                     if (menor_idx == -1 || tupla_atual.cols[col_idx] < menor_tupla.cols[col_idx]){
                         menor_idx = j;
                         menor_tupla = tupla_atual;

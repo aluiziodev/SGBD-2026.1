@@ -23,8 +23,16 @@ struct Tabela{
         return total;
     }
 
-    Tupla tuplaEm(int pag_idx, int tup_idx) { // Acessa a tupla na posição global    
-        return pags[pag_idx].tuplas[tup_idx];
+    Tupla tuplaEm(int global_idx) { // Acessa a tupla na posição global    
+        //Recebe o indice global da tupla (considerando todas as páginas)
+        int restante = global_idx;
+        for (auto &p : pags) {
+            //Verifica se a tupla está na pag atual (Temos que ver a qtd de tuplas ocupadas na página)
+            if (restante < p.qtd_tuplas_ocup)
+                return p.tuplas[restante];
+            restante -= p.qtd_tuplas_ocup;
+        }
+        throw out_of_range("Índice fora dos limites");
     }
 
     void novaPagina() { // Adiciona uma página nova 

@@ -16,7 +16,7 @@ struct Tupla{
 
     Tupla(vector<string> cols=vector<string>()) : cols(cols) {}   // Construtor 
 
-    Tupla concatenar(Tupla &tupla2) {  // Concatena duas tuplas
+    Tupla concatenar(const Tupla &tupla2) {  // Concatena duas tuplas
         vector<string> nova_cols = cols;
         nova_cols.insert(nova_cols.end(), tupla2.cols.begin(), tupla2.cols.end());
         return Tupla(nova_cols);
@@ -38,7 +38,7 @@ struct Pagina{
         return qtd_tuplas_ocup == 0;
     }
 
-    void inserirTupla(Tupla &tupla){  // Insere uma tupla na página 
+    void inserirTupla(const Tupla &tupla){  // Insere uma tupla na página 
         if(isCheia()) throw overflow_error("Pagina cheia");
         tuplas[qtd_tuplas_ocup++] = tupla;
     }
