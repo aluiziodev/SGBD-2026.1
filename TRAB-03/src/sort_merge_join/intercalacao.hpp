@@ -16,7 +16,7 @@ vector<Tabela> intercala(vector<Tabela> &runs_entrada,
 
         vector<int> indices(fim - i, 0); // Índices de leitura para cada run de entrada
 
-        Tabela run_saida; // Frame de saída 
+        Tabela run_saida; // Frame de saída (Simula a run de saída que será gravada no disco)
         run_saida.esquema = esquema;
 
         Pagina pagina_saida; // Página atual do frame de saída            
