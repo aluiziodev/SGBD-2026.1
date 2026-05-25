@@ -183,15 +183,15 @@ void testeMergeJoinSemMatch() {
 void testeCSV() {
     cout << BLUE << "\n========== TESTE 4: Leitura de CSV ==========\n" << RESET;
     try {
-        Tabela wines  = lerCSV("src/data/wines.csv");
-        Tabela grapes = lerCSV("src/data/grapes.csv");
+        Tabela wines  = lerCSV("../data/wines.csv");
+        Tabela grapes = lerCSV("../data/grapes.csv");
 
         cout << "Wines:  " << wines.qtdTotalTuplas()  << " tuplas, " << wines.qtdPags()  << " pagina(s)\n";
         cout << "Grapes: " << grapes.qtdTotalTuplas() << " tuplas, " << grapes.qtdPags() << " pagina(s)\n";
 
         Tabela resultado = sortMergeJoin(wines, grapes, "chave_estrangeira", "chave_primaria");
 
-        int limite = 10;
+        int limite = 510;
 
         cout << "Resultado: " << resultado.qtdTotalTuplas() << " tuplas\n";
         cout << "Primeiras " << limite << " tuplas:\n\n";
